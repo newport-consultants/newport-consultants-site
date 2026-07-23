@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newport Consultants | SFR Turns, Renovations & Maintenance | Atlanta Metro</title>
+<meta name="description" content="Newport Consultants provides unit turns, make-ready inspections, capital improvements, and maintenance for property managers and REITs across the Atlanta metro. 25 years in business, trusted by national REIT portfolios across the metro.">
+<link rel="canonical" href="https://newport-consultants.com/">
+<meta property="og:title" content="Newport Consultants | SFR Turns, Renovations & Maintenance">
+<meta property="og:description" content="Unit turns, make-ready inspections, capital improvements, and maintenance for property managers and REITs across the Atlanta metro.">
+<meta property="og:url" content="https://newport-consultants.com/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#0F2340;
+    --navy-mid:#16335C;
+    --orange:#E36414;
+    --orange-dark:#C4530C;
+    --cream:#F7F5F1;
+    --paper:#FFFFFF;
+    --ink:#20242B;
+    --steel:#69707D;
+    --line:#DAD6CC;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.55;
+  }
+  h1,h2,h3,.display{
+    font-family:'Barlow Condensed',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    color:var(--navy-deep);
+  }
+  .mono{
+    font-family:'IBM Plex Mono',monospace;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:14px 28px;
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:600;
+    font-size:1.05rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    border-radius:2px;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
+  .btn-primary{background:var(--orange);color:#fff;}
+  .btn-primary:hover{background:var(--orange-dark);transform:translateY(-1px);}
+  .btn-ghost{background:transparent;border-color:rgba(255,255,255,0.5);color:#fff;}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,0.08);}
+  .btn-ghost-dark{background:transparent;border-color:var(--navy-deep);color:var(--navy-deep);}
+  .btn-ghost-dark:hover{background:var(--navy-deep);color:#fff;}
+
+  /* ===== HEADER ===== */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy-deep);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1120px;margin:0 auto;}
+  .brand{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.4rem;color:#fff;letter-spacing:0.03em;text-transform:uppercase;display:flex;align-items:center;gap:10px;}
+  .brand .mark{width:12px;height:12px;background:var(--orange);transform:rotate(45deg);flex-shrink:0;}
+  .navlinks{display:flex;gap:32px;align-items:center;}
+  .navlinks a{color:#CBD3E1;font-size:0.92rem;font-weight:500;transition:color .15s;}
+  .navlinks a:hover{color:#fff;}
+  .navphone{color:var(--orange);font-weight:600;}
+  .navtoggle{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;}
+
+  /* ===== HERO ===== */
+  .hero{
+    background:linear-gradient(155deg,var(--navy-deep) 0%, var(--navy-mid) 60%, #1c3f6e 100%);
+    color:#fff;
+    padding:88px 24px 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:48px 48px;
+    pointer-events:none;
+  }
+  .hero-inner{max-width:1120px;margin:0 auto;position:relative;z-index:1;padding-bottom:64px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--orange);
+    font-size:0.82rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    display:flex;align-items:center;gap:10px;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{content:"";width:24px;height:2px;background:var(--orange);}
+  .hero h1{
+    font-size:clamp(2.4rem, 5.5vw, 4.1rem);
+    line-height:0.98;
+    font-weight:700;
+    color:#fff;
+    max-width:820px;
+    margin-bottom:22px;
+  }
+  .hero h1 span{color:var(--orange);}
+  .hero p.lead{
+    font-size:1.15rem;
+    color:#C9D2E0;
+    max-width:560px;
+    margin-bottom:36px;
+    font-weight:400;
+  }
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px;}
+
+  /* stat strip - work order styled */
+  .statbar{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:3px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    position:relative;
+    z-index:1;
+    box-shadow:0 20px 40px -18px rgba(15,35,64,0.45);
+    transform:translateY(40px);
+  }
+  .stat{
+    padding:22px 20px;
+    border-right:1px solid var(--line);
+  }
+  .stat:last-child{border-right:none;}
+  .stat .num{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:1.7rem;
+    color:var(--navy-deep);
+    display:flex;
+    align-items:baseline;
+    gap:4px;
+  }
+  .stat .num .unit{font-size:0.95rem;color:var(--orange);}
+  .stat .label{
+    font-size:0.74rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--steel);
+    margin-top:4px;
+  }
+  .hero-spacer{height:56px;}
+
+  /* ===== SECTION SHARED ===== */
+  section{padding:96px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--orange-dark);
+    margin-bottom:14px;
+    display:block;
+  }
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:700;line-height:1.05;}
+  .section-head p{color:var(--steel);font-size:1.05rem;margin-top:16px;max-width:560px;}
+
+  /* ===== ABOUT ===== */
+  .about{background:var(--paper);}
+  .about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:start;}
+  .about-copy p{color:#3B4150;margin-bottom:18px;font-size:1.02rem;}
+  .about-copy p strong{color:var(--navy-deep);}
+  .cred-list{border-top:1px solid var(--line);}
+  .cred-item{
+    display:flex;align-items:flex-start;gap:14px;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .cred-item .tick{
+    width:20px;height:20px;flex-shrink:0;
+    border:2px solid var(--orange);
+    border-radius:3px;
+    display:flex;align-items:center;justify-content:center;
+    margin-top:2px;
+  }
+  .cred-item .tick::after{
+    content:"";width:9px;height:5px;
+    border-left:2px solid var(--orange);
+    border-bottom:2px solid var(--orange);
+    transform:rotate(-45deg) translate(1px,-1px);
+  }
+  .cred-item span.t{font-weight:600;color:var(--navy-deep);font-size:0.98rem;}
+  .cred-item p{font-size:0.88rem;color:var(--steel);margin-top:2px;}
+
+  /* ===== SERVICES ===== */
+  .services{background:var(--cream);}
+  .service-list{border-top:1px solid var(--line);}
+  .service-row{
+    display:grid;
+    grid-template-columns:90px 1fr 1.3fr;
+    gap:32px;
+    align-items:start;
+    padding:30px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .service-row .idx{
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--orange);
+    font-size:0.85rem;
+    padding-top:4px;
+  }
+  .service-row h3{font-size:1.5rem;font-weight:600;}
+  .service-row p{color:var(--steel);font-size:0.98rem;}
+  .service-row:hover{background:rgba(227,100,20,0.035);}
+
+  /* ===== SERVICE AREA ===== */
+  .area{background:var(--navy-deep);color:#fff;}
+  .area .section-head h2{color:#fff;}
+  .area .section-head p{color:#AAB4C6;}
+  .area-grid{display:flex;flex-wrap:wrap;gap:14px;}
+  .area-chip{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.85rem;
+    padding:10px 18px;
+    border:1px solid rgba(255,255,255,0.22);
+    border-radius:2px;
+    color:#DCE3EE;
+    background:rgba(255,255,255,0.03);
+  }
+  .area-chip.hub{border-color:var(--orange);color:var(--orange);font-weight:600;}
+
+  /* ===== PROCESS ===== */
+  .process{background:var(--paper);}
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);}
+  .process-step{padding:28px 26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .process-step .pnum{font-family:'IBM Plex Mono',monospace;color:var(--orange);font-size:0.85rem;margin-bottom:12px;}
+  .process-step h3{font-size:1.25rem;margin-bottom:8px;}
+  .process-step p{font-size:0.9rem;color:var(--steel);}
+
+  /* ===== CONTACT ===== */
+  .contact{background:var(--cream);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;}
+  .contact-left h2{font-size:clamp(1.9rem,3.4vw,2.6rem);margin-bottom:18px;}
+  .contact-left p{color:var(--steel);margin-bottom:32px;max-width:440px;}
+  .call-card{
+    background:var(--navy-deep);color:#fff;
+    padding:28px;border-radius:3px;margin-bottom:20px;
+  }
+  .call-card .label{font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:#AAB4C6;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;}
+  .call-card .phone{font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:700;color:var(--orange);letter-spacing:0.02em;}
+  .contact-note{font-size:0.85rem;color:var(--steel);}
+
+  form{background:var(--paper);border:1px solid var(--line);border-radius:3px;padding:32px;}
+  .field{margin-bottom:20px;}
+  .field label{display:block;font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--navy-deep);margin-bottom:8px;}
+  .field input, .field select, .field textarea{
+    width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:2px;
+    font-family:'Inter',sans-serif;font-size:0.95rem;background:var(--cream);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{outline:2px solid var(--orange);outline-offset:1px;background:#fff;}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  form .btn-primary{width:100%;justify-content:center;margin-top:6px;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--navy-deep);color:#AAB4C6;padding:48px 0 28px;}
+  .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .footer-brand{color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+  .footer-brand .mark{width:10px;height:10px;background:var(--orange);transform:rotate(45deg);}
+  .footer-col p, .footer-col a{font-size:0.9rem;line-height:1.9;color:#AAB4C6;}
+  .footer-col a:hover{color:var(--orange);}
+  .footer-col h4{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:#7C89A0;margin-bottom:12px;}
+  .footer-bottom{padding-top:24px;font-size:0.82rem;color:#7C89A0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:900px){
+    .about-grid, .contact-grid{grid-template-columns:1fr;gap:48px;}
+    .statbar{grid-template-columns:repeat(2,1fr);}
+    .stat:nth-child(2){border-right:none;}
+    .stat{border-bottom:1px solid var(--line);}
+    .process-grid{grid-template-columns:repeat(2,1fr);}
+    .service-row{grid-template-columns:50px 1fr;}
+    .service-row p{grid-column:2/3;}
+  }
+  @media (max-width:640px){
+    .navlinks{display:none;}
+    .navtoggle{display:block;}
+    .field-row{grid-template-columns:1fr;}
+    .process-grid{grid-template-columns:1fr;}
+    section{padding:64px 0;}
+    .footer-bottom{flex-direction:column;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand"><span class="mark"></span>Newport Consultants</a>
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#area">Service Area</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:6787773531" class="navphone">678-777-3531</a>
+    </div>
+  </nav>
+</header>
+
+<div id="top"></div>
+<section class="hero" style="padding-top:88px;">
+  <div class="hero-inner">
+    <span class="eyebrow">Atlanta Metro &middot; SFR Turns &amp; Renovations</span>
+    <h1>Problem house?<br>We turn it <span>around.</span></h1>
+    <p class="lead">Newport Consultants handles unit turns, make-ready inspections, and renovations for property managers and REITs across the Atlanta metro — on schedule, on budget, every time.</p>
+    <div class="hero-ctas">
+      <a href="tel:6787773531" class="btn btn-primary">Call 678-777-3531</a>
+      <a href="#contact" class="btn btn-ghost">Request a Quote</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="statbar">
+      <div class="stat">
+        <div class="num">25<span class="unit">YRS</span></div>
+        <div class="label">In business since 2001</div>
+      </div>
+      <div class="stat">
+        <div class="num">12&ndash;25<span class="unit">/MO</span></div>
+        <div class="label">Turns completed monthly</div>
+      </div>
+      <div class="stat">
+        <div class="num">400<span class="unit">+</span></div>
+        <div class="label">Turns in the last 2 years</div>
+      </div>
+      <div class="stat">
+        <div class="num" style="font-size:1.3rem;">REIT-Trusted</div>
+        <div class="label">Ongoing work for national REIT portfolios</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-spacer"></div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-copy">
+        <span class="section-tag">Who We Are</span>
+        <h2 style="font-size:clamp(1.9rem,3.4vw,2.7rem);margin-bottom:22px;">25 years of keeping single-family rentals rent-ready</h2>
+        <p>Newport Consultants has served the Atlanta metro since 2001. We work directly with property managers and REITs to turn, renovate, and maintain single-family rental homes — the kind of work that keeps a portfolio occupied and a maintenance queue under control.</p>
+        <p>We currently do <strong>ongoing work for national REITs</strong> and complete <strong>12 to 25 turns a month</strong> across the metro, working within the SLA timelines our REIT and property management partners require, with lead-safe compliance overseen by our certified management team.</p>
+      </div>
+      <div class="cred-list">
+        <div class="cred-item">
+          <span class="tick"></span>
+          <div><span class="t">25 years in business</span><p>Founded in 2001, serving the Atlanta metro continuously since.</p></div>
+        </div>
+        <div class="cred-item">
+          <span class="tick"></span>
+          <div><span class="t">Built for institutional portfolios</span><p>Systems and reporting suited to REIT and property management workflows, not one-off jobs.</p></div>
+        </div>
+        <div class="cred-item">
+          <span class="tick"></span>
+          <div><span class="t">Lead-safe compliance management</span><p>Our management team is certified to oversee work in pre-1978 housing stock.</p></div>
+        </div>
+        <div class="cred-item">
+          <span class="tick"></span>
+          <div><span class="t">Active REIT relationships</span><p>Currently performing ongoing turn work for national REIT partners.</p></div>
+        </div>
+        <div class="cred-item">
+          <span class="tick"></span>
+          <div><span class="t">SLA-driven scheduling</span><p>Every turn is scoped and tracked against the SLA our partners require.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">What We Do</span>
+      <h2>Every stage of a rental's life cycle</h2>
+      <p>From the day a tenant moves out to the day the next one moves in — and everything in between.</p>
+    </div>
+    <div class="service-list">
+      <div class="service-row">
+        <div class="idx">01</div>
+        <h3>Unit Turns</h3>
+        <p>Full turnaround between tenants — repairs, cleaning, paint, and punch-list items completed fast so the unit stays off the vacancy report.</p>
+      </div>
+      <div class="service-row">
+        <div class="idx">02</div>
+        <h3>Make-Ready Inspections</h3>
+        <p>Detailed walkthroughs that catch what needs fixing before it becomes a tenant complaint, with a clear scope and cost to act on.</p>
+      </div>
+      <div class="service-row">
+        <div class="idx">03</div>
+        <h3>Capital Improvements</h3>
+        <p>Larger-scope upgrades — kitchens, baths, systems — that raise a property's value and rent-readiness for the long term.</p>
+      </div>
+      <div class="service-row">
+        <div class="idx">04</div>
+        <h3>Renovations</h3>
+        <p>Full or partial renovations for homes coming out of long-term hold or needing a reset before re-listing.</p>
+      </div>
+      <div class="service-row">
+        <div class="idx">05</div>
+        <h3>Preventative Maintenance</h3>
+        <p>Scheduled upkeep that catches small problems before they turn into work orders — and keeps your portfolio predictable.</p>
+      </div>
+      <div class="service-row">
+        <div class="idx">06</div>
+        <h3>Emergency Maintenance</h3>
+        <p>Fast response when something breaks and can't wait — a burst pipe, a failed system, a safety issue.</p>
+      </div>
+      <div class="service-row">
+        <div class="idx">07</div>
+        <h3>Occupied Maintenance</h3>
+        <p>Repairs and upkeep completed with a tenant in place, scheduled and handled with minimal disruption.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area" id="area">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Where We Work</span>
+      <h2>Serving the Atlanta metro</h2>
+      <p>Based in the metro, with crews regularly out across these areas.</p>
+    </div>
+    <div class="area-grid">
+      <span class="area-chip hub">Atlanta Metro (Hub)</span>
+      <span class="area-chip">Locust Grove</span>
+      <span class="area-chip">Dallas / Temple</span>
+      <span class="area-chip">Covington</span>
+      <span class="area-chip">Cartersville</span>
+      <span class="area-chip">Hoschton</span>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">How It Works</span>
+      <h2>From call to completed turn</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="pnum">Step 01</div>
+        <h3>Call or request a quote</h3>
+        <p>Tell us the address and what's going on. We'll ask a few questions to scope the job.</p>
+      </div>
+      <div class="process-step">
+        <div class="pnum">Step 02</div>
+        <h3>Walkthrough &amp; scope</h3>
+        <p>We inspect the property and send back a clear scope of work and cost — no surprises later.</p>
+      </div>
+      <div class="process-step">
+        <div class="pnum">Step 03</div>
+        <h3>Work scheduled</h3>
+        <p>We schedule the crew and keep you updated as the job moves — occupied or vacant.</p>
+      </div>
+      <div class="process-step">
+        <div class="pnum">Step 04</div>
+        <h3>Sign-off</h3>
+        <p>Final walkthrough, punch list closed out, and the property's ready to show or re-occupy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <span class="section-tag">Get In Touch</span>
+        <h2>Have a problem house? Let's fix it.</h2>
+        <p>Call for the fastest response, or send over the property details and we'll get back to you with a scope and quote.</p>
+        <div class="call-card">
+          <div class="label">Call Now</div>
+          <a href="tel:6787773531" class="phone">678-777-3531</a>
+        </div>
+        <p class="contact-note">Or email <a href="mailto:service@newport-consultants.com" style="color:var(--navy-deep);font-weight:600;">service@newport-consultants.com</a> directly.</p>
+        <p class="contact-note" style="margin-top:8px;">Serving property managers and REITs across the Atlanta metro. Built for institutional single-family rental portfolios.</p>
+      </div>
+      <form action="https://formspree.io/f/xbdnzdgw" method="POST">
+        <input type="hidden" name="_subject" value="New quote request — Newport Consultants website">
+        <div class="field-row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="Name" required>
+          </div>
+          <div class="field">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="Company">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="Phone" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email">
+          </div>
+        </div>
+        <div class="field">
+          <label for="address">Property Address</label>
+          <input type="text" id="address" name="Property Address" required>
+        </div>
+        <div class="field">
+          <label for="service">What do you need?</label>
+          <select id="service" name="Service Needed">
+            <option>Unit Turn</option>
+            <option>Make-Ready Inspection</option>
+            <option>Capital Improvement</option>
+            <option>Renovation</option>
+            <option>Preventative Maintenance</option>
+            <option>Emergency Maintenance</option>
+            <option>Occupied Maintenance</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="details">Details</label>
+          <textarea id="details" name="Details" rows="4" placeholder="What's going on with the property?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col" style="flex:1;min-width:220px;">
+        <div class="footer-brand"><span class="mark"></span>Newport Consultants</div>
+        <p>Turns, renovations, and maintenance for property managers and REITs across the Atlanta metro since 2001.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p><a href="tel:6787773531">678-777-3531</a></p>
+        <p><a href="mailto:service@newport-consultants.com">service@newport-consultants.com</a></p>
+        <p>Atlanta Metro, GA</p>
+      </div>
+      <div class="footer-col">
+        <h4>Service Area</h4>
+        <p>Locust Grove &middot; Dallas/Temple<br>Covington &middot; Cartersville &middot; Hoschton</p>
+      </div>
+      <div class="footer-col">
+        <h4>Partnerships</h4>
+        <p>National REIT Partner<br>SLA-Driven Scheduling</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Newport Consultants. All rights reserved.</span>
+      <span>Est. 2001 &middot; Atlanta Metro</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
